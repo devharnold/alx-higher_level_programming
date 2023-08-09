@@ -1,29 +1,28 @@
 #include "lists.h"
 
 /**
- * check_cycle - We check for cycles in a list
- * @list: The pointer to the begining node
+ * check_cycle - cheking for cycles in a list using this function
+ * @list: The pointer to the begining of the node
  *
- * Return: 0 if cycle not found, 1 if cycle found
+ * Return: Upon Success - Found cycle (1) if otherwise (0)
  */
 int check_cycle(listint_t *list)
 {
-    if (list == NULL || list->next == NULL)
+        listint_t *current, *check;
+
+        if (list == NULL || list->next == NULL)
+                return 0;
+        current = list;
+        check = current->next;
+
+        while (current != NULL && check->next != NULL
+                && check->next->next != NULL)
+        {
+                if (current == check)
+                        return 1;
+                current = current->next;
+                check = check->next->next;
+        }
         return 0;
-
-    listint_t *current = list;
-    listint_t *check = current->next;
-
-    do {
-        if (current == check)
-            return (1);
-
-        current = current->next;
-        if (check->next != NULL && check->next->next != NULL)
-            check = check->next->next;
-        else
-            return (0);
-    } while (current != NULL);
-
-    return (0);
 }
+
