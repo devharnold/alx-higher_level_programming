@@ -38,7 +38,6 @@ int is_palindrome(listint_t **head)
     return (1);
 }
 
-
 /**
   * get_nodeint_at_index - getting node from a linked list
   * @head: The head of the linked list
@@ -72,6 +71,7 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
   *
   * Return: Upon Success - Element numbers
   */
+
 size_t listint_len(const listint_t *h)
 {
         int lenght = 0;
