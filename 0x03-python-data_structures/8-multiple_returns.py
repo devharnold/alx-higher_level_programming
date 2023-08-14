@@ -1,12 +1,10 @@
 #!/usr/bin/python3
 
 def multiple_returns(sentence):
-    if len(sentence) == 0:
-        first_char = None
+    length = len(sentence)
+    if length == 0:
+        result = (0, None)
+        return result
     else:
-        first_char = sentence[0]
-        return (len(sentence), first_char)
-
-input_sentence = "Holberton, School"
-result = multiple_returns(input_sentence)
-print(result)
+        result = (length, sentence[0:1])
+        return result
