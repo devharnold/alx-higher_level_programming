@@ -7,6 +7,7 @@
  *
  * Return: Nothing
  */
+
 void print_python_list_info(PyObject *p)
 {
 PyObject *item;
