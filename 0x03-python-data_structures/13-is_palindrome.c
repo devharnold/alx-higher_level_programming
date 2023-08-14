@@ -10,49 +10,32 @@
   */
 int is_palindrome(listint_t **head)
 {
-    listint_t *start = NULL, *end = NULL;
-    unsigned int i = 0, len = 0, len_cyc = 0, len_list = 0;
+    listint_t *slow = *head, *fast = *head, *prev = NULL;
 
-    if (head == NULL)
-        return (0);
-
-    if (*head == NULL)
+    if (*head == NULL || (*head)->next == NULL)
         return (1);
 
-    start = *head;
-    len = listint_len(start);
-    len_cyc = len * 2;
-    len_list = len_cyc - 2;
-    end = *head;
-
-    for (; i < len_cyc; i = i + 2)
+    while (fast != NULL && fast->next != NULL)
     {
-        if (start[i].n != end[len_list].n)
-            return (0);
+        fast = fast->next->next;
+        listint_t *next = slow->next;
+        slow->next = prev;
+        prev = slow;
+        slow = next;
+    }
 
-        len_list = len_list - 2;
+    if (fast != NULL)
+        slow = slow->next;
+
+    while (slow != NULL)
+    {
+        if (slow->n != prev->n)
+            return (0);
+        slow = slow->next;
+        prev = prev->next;
     }
 
     return (1);
-}
-
-/**
-  * slistint_len - counting numbers within the list
-  * @h: The linked list to count
-  *
-  * Return:Upon Success - Number of elements
-  */
-size_t listint_len(const listint_t *h)
-{
-        int lenght = 0;
-
-        while (h != NULL)
-        {
-                ++lenght;
-                h = h->next;
-        }
-
-        return (lenght);
 }
 
 
@@ -61,7 +44,7 @@ size_t listint_len(const listint_t *h)
   * @head: The head of the linked list
   * @index: The index to find in the linked list
   *
-  * Return: (Upon Success - Node found)
+  * Return: Upon Success - The nodes of the list
   */
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
@@ -81,5 +64,24 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
         }
 
         return (NULL);
+}
+
+/**
+  * slistint_len - counting numbers within the list
+  * @h: The linked list to count
+  *
+  * Return: Upon Success - Element numbers
+  */
+size_t listint_len(const listint_t *h)
+{
+        int lenght = 0;
+
+        while (h != NULL)
+        {
+                ++lenght;
+                h = h->next;
+        }
+
+        return (lenght);
 }
 
