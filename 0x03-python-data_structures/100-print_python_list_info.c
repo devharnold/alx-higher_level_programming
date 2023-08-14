@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <Python.h>
+
+
 /**
  * print_python_list_info - Print knowledge of Python lists
  * @p: PyObject
