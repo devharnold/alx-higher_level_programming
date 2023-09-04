@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-
 """
 A Rectangle Class
 """
@@ -41,4 +40,3 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         self.__height = value
 
-        
