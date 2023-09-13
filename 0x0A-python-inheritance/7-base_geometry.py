@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-A integer validator module
+class BaseGeometry
 """
 
 
@@ -30,7 +30,9 @@ class BaseGeometry:
         """
 
         if type(value) is not int:
+            """if the type(value) is not int -> raise TypeError"""
             raise TypeError(name + ' must be an integer')
 
         if value <= 0:
+            """if value is less than 0 raise valueError"""
             raise ValueError(name + ' must be greater than 0')
