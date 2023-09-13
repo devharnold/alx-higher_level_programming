@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+
+"""is_kind_of_class -> class"""
+
+
 def is_kind_of_class(obj, a_class):
     """
     Checks if `obj` is the same class or inherit from `a_class`
