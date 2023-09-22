@@ -45,7 +45,7 @@ class Rectangle(Base):
         return self.__height
 
     @height.setter
-    def height(self):
+    def height(self, value):
         if type(value) != int:
             raise TypeError("Must be an integer")
         if value <= 0:
@@ -58,7 +58,7 @@ class Rectangle(Base):
         return self.__x
 
     @y.setter
-    def x(self):
+    def x(self, value):
         if type(value) != int:
             raise TypeError("Must be an integer")
         if value <= 0:
@@ -71,7 +71,7 @@ class Rectangle(Base):
         return self.__y
 
     @x.setter
-    def y(self):
+    def y(self, value):
         if type(value) != int:
             raise TypeError("Must be an integer")
         if value <= 0:
@@ -154,3 +154,6 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
                                                        self.x, self.y,
                                                        self.width, self.height)
+
+
+                                                       
