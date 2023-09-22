@@ -544,8 +544,4 @@ class TestBase_load_from_file_csv(unittest.TestCase):
             Base.load_from_file_csv([], 1)
 
 if __name__ == "__main__":
-<<<<<<< HEAD
     unittest.main()
-=======
-    unittest.main()
->>>>>>> ab44f86af37b3f8dfd1784eb514ca86e8dd7cde0
