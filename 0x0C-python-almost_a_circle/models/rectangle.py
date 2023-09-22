@@ -53,22 +53,22 @@ class Rectangle(Base):
         self.__height = value
 
     @property
-    def y(self):
+    def x(self):
         """get the y coordinate"""
-        return self.__y
+        return self.__x
 
     @y.setter
-    def y(self):
+    def x(self):
         if type(value) != int:
             raise TypeError("Must be an integer")
         if value <= 0:
             raise ValueError("height must be > 0")
-        self.__y = value
+        self.__x = value
 
     @property
-    def x(self):
+    def y(self):
         """get the y coordinate"""
-        return self.__x
+        return self.__y
 
     @x.setter
     def y(self):
@@ -76,7 +76,7 @@ class Rectangle(Base):
             raise TypeError("Must be an integer")
         if value <= 0:
             raise ValueError("height must be > 0")
-        self.__x = value
+        self.__y = value
 
     def area(self):
         """Return the area of the Rectangle."""
