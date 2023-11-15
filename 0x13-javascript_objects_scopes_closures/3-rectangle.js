@@ -14,5 +14,5 @@ class Rectnagle{
         }
     }
 }
-module.exports = Rectnagle;
+module.exports = Rectangle;
 
