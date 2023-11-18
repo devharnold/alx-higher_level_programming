@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""Filter cities"""
 import MySQLdb
 from sys import argv
 
