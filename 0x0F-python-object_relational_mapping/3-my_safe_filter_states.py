@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+""" SQL injection - safe_filter """
 import MySQLdb
 from sys import argv
 
